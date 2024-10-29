@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute to General Bipin Rawat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(45deg, #FF9933, #FFFFFF, #138808);
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .title {
+            font-size: 3rem;
+            color: #000;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin: 2rem auto;
+            display: block;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            border: 5px solid #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        }
+
+        .section {
+            background: #fff;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #1e3c72;
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            color: #1e3c72;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+        }
+
+        .timeline {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        .timeline li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+            transition: transform 0.2s ease;
+        }
+
+        .timeline li:hover {
+            transform: translateX(10px);
+            color: #1e3c72;
+        }
+
+        .timeline li::before {
+            content: "🎖️";
+            position: absolute;
+            left: -1.5rem;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #1e3c72;
+            background: #f0f4f8;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 5px solid #FF9933;
+            transition: all 0.3s ease;
+        }
+
+        .quote:hover {
+            background: #e8eef5;
+            transform: scale(1.01);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .achievement-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid #138808;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-5px);
+            background: #ffffff;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            border-left: 6px solid #138808;
+        }
+
+        .achievement-item:hover p {
+            color: #1e3c72;
+            font-weight: 500;
+        }
+
+        .achievement-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #FF9933, #138808);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .achievement-item:hover::after {
+            transform: scaleX(1);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #1e3c72;
+            color: #fff;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .footer:hover {
+            background: #2a5298;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            .title {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">General Bipin Rawat</h1>
+            <p class="subtitle">1958 - 2021</p>
+            <p class="subtitle">First Chief of Defence Staff of India</p>
+        </header>
+
+        <img src="https://swarajya.gumlet.io/swarajya/2021-12/797fc255-0e0a-4a7f-accd-ea18496f13e6/Gen_Bipin_Rawat_Image__1_.png?w=610&q=50&compress=true&format=auto" 
+             alt="General Bipin Rawat" 
+             class="hero-image">
+
+        <div class="section">
+            <h2 class="section-title">Legacy of Service</h2>
+            <p>General Bipin Rawat served as the first Chief of Defence Staff of India, the highest-ranking military officer in the Indian Armed Forces. His distinguished career spanned over four decades, during which he served with honor and dedication to the nation.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Military Career Highlights</h2>
+            <ul class="timeline">
+                <li>Commissioned into the 5th battalion of 11 Gorkha Rifles in 1978</li>
+                <li>Commanded an infantry battalion along the Line of Actual Control</li>
+                <li>Appointed as Chief of Army Staff in 2016</li>
+                <li>Became India's first Chief of Defence Staff in 2020</li>
+                <li>Awarded with numerous honors including PVSM, UYSM, AVSM, YSM, SM, VSM</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Vision and Leadership</h2>
+            <p>General Rawat was instrumental in modernizing the Indian military and implementing crucial reforms. He worked tirelessly towards the integration of the three services - Army, Navy, and Air Force.</p>
+            <div class="quote">
+                "The military should be far away from politics. The military should be ready to handle any challenge."
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Contributions and Achievements</h2>
+            <div class="achievements">
+                <div class="achievement-item">
+                    <p>🔰 Military Reforms and Modernization</p>
+                </div>
+                <div class="achievement-item">
+                    <p>🔰 Enhanced Inter-Service Coordination</p>
+                </div>
+                <div class="achievement-item">
+                    <p>🔰 Strengthened Defense Preparedness</p>
+                </div>
+                <div class="achievement-item">
+                    <p>🔰 Indigenous Defense Production</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>In memory of General Bipin Rawat (1958-2021)</p>
+            <p>A true patriot who dedicated his life to serving India</p>
+        </footer>
+    </div>
+</body>
+</html>
